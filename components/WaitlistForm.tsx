@@ -59,7 +59,7 @@ export default function WaitlistForm() {
       {status !== 'success' && (
         <button
           type="submit"
-          className="cta-lift w-full bg-[#080d1e] text-white text-xs font-semibold tracking-[2px] uppercase py-5 px-8 hover:bg-[#d4af37] disabled:opacity-60"
+          className="cta-lift w-full bg-[#080d1e] text-white text-xs font-semibold tracking-[2px] uppercase py-5 px-6 hover:bg-[#d4af37] disabled:opacity-60 leading-relaxed text-center"
           disabled={status === 'loading'}
         >
           {status === 'loading'

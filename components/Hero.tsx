@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24" id="accueil">
+    <section className="relative min-h-[75vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24" id="accueil">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -48,7 +48,7 @@ export default function Hero() {
         </p>
         <a
           href="#participer"
-          className="hero-anim-3 cta-lift inline-block bg-white border border-[rgba(212,175,55,0.2)] px-8 py-4 md:px-12 md:py-5 text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase"
+          className="hero-anim-3 cta-lift block text-center bg-white border border-[rgba(212,175,55,0.2)] px-6 py-4 md:px-12 md:py-5 text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase leading-relaxed"
         >
           Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
         </a>

@@ -59,7 +59,7 @@ export default function Reviews() {
         <div className="border-t border-b border-[rgba(212,175,55,0.2)] py-5 flex items-center justify-center">
           <a
             href="#participer"
-            className="link-arrow text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase transition-colors duration-200 hover:text-[#d4af37]"
+            className="link-arrow text-center text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase transition-colors duration-200 hover:text-[#d4af37] leading-relaxed px-4"
           >
             Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
           </a>
