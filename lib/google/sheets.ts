@@ -21,7 +21,7 @@ export async function appendToWaitlistSheet(
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-    range: 'Inscrits!A:C',
+    range: 'A:C',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
       values: [[email, source, createdAt]],
