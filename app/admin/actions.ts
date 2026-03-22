@@ -1,6 +1,7 @@
 'use server'
 
 import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL!
@@ -21,6 +22,20 @@ export async function loginAction(_prevState: { error: string }, formData: FormD
   }
 
   redirect('/admin')
+}
+
+export async function deleteEntriesAction(ids: string[]) {
+  if (!ids.length) return { error: 'Aucun ID fourni.' }
+
+  const supabase = await createClient()
+  const { error } = await supabase
+    .from('waitlist')
+    .delete()
+    .in('id', ids)
+
+  if (error) return { error: error.message }
+  revalidatePath('/admin')
+  return { success: true }
 }
 
 export async function logoutAction() {
