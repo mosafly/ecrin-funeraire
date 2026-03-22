@@ -513,6 +513,7 @@ a { text-decoration: none; }
   .container { padding: 0 32px; }
   .features-wrap { padding: 0 32px; }
   .participer-inner { padding: 0 32px; }
+  .section-participer { padding: 80px 32px; }
 }
 
 @media (max-width: 768px) {

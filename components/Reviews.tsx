@@ -19,12 +19,12 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section id="retour" className="bg-[#fdfcfb] px-20 py-32">
+    <section id="retour" className="bg-[#fdfcfb] px-4 md:px-20 py-16 md:py-32">
       <div className="max-w-[1280px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center gap-6 mb-16">
+        <div className="flex flex-col items-center gap-4 md:gap-6 mb-10 md:mb-16">
           <h2
-            className="font-light text-[60px] text-[#080d1e] text-center leading-[1]"
+            className="font-light text-[34px] md:text-[50px] lg:text-[60px] text-[#080d1e] text-center leading-[1.1] md:leading-[1]"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
             Retour d&apos;Expérience par des professionnels du funéraire
@@ -33,11 +33,11 @@ export default function Reviews() {
         </div>
 
         {/* Grid 2x2 */}
-        <div className="grid grid-cols-2 gap-0 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-10 md:mb-16">
           {reviews.map((review) => (
             <div
               key={review.author}
-              className="card-lift backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] p-12 shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]"
+              className="card-lift backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] p-6 md:p-12 shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]"
             >
               <p
                 className="font-semibold text-[14px] text-[#080d1e] mb-2"

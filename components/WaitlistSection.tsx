@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function WaitlistSection() {
   return (
-    <section id="participer" className="relative bg-[#080d1e] px-48 py-32 overflow-hidden flex flex-col items-center">
+    <section id="participer" className="relative bg-[#080d1e] px-4 sm:px-8 md:px-16 lg:px-48 py-16 md:py-32 overflow-hidden flex flex-col items-center">
       {/* Deco */}
       <div className="absolute top-0 bottom-0 right-0 left-1/2 opacity-10 pointer-events-none">
         <Image
@@ -14,26 +14,26 @@ export default function WaitlistSection() {
         />
       </div>
 
-      <div className="relative z-10 w-[896px] px-12 flex flex-col gap-16 items-center">
+      <div className="relative z-10 w-full max-w-[896px] px-0 md:px-12 flex flex-col gap-10 md:gap-16 items-center">
         <h2
-          className="font-light text-[60px] text-white text-center leading-tight"
+          className="font-light text-[34px] md:text-[50px] lg:text-[60px] text-white text-center leading-tight"
           style={{ fontFamily: 'Cormorant Garamond, serif' }}
         >
-          Participez à la création de<br />l&apos;application et venez la tester.
+          Participez à la création de l&apos;application et venez la tester.
         </h2>
 
         {/* Form card */}
         <div className="w-full bg-[#fcfaf7] border-t-8 border-[#d4af37] rounded-sm shadow-lg">
-          <div className="px-20 pt-16 pb-12">
+          <div className="px-6 pt-10 pb-8 md:px-20 md:pt-16 md:pb-12">
             <h3
-              className="text-[30px] text-[#080d1e] text-center mb-8"
+              className="text-[24px] md:text-[30px] text-[#080d1e] text-center mb-6 md:mb-8"
               style={{ fontFamily: 'Georgia, serif' }}
             >
               Participer et tester
             </h3>
 
             {/* Avantages */}
-            <div className="border border-[#e5e7eb] p-8 mb-8">
+            <div className="border border-[#e5e7eb] p-5 md:p-8 mb-6 md:mb-8">
               <p
                 className="text-[22px] text-[#080d1e] mb-4"
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}

@@ -3,27 +3,27 @@ import ScrollReveal from './ScrollReveal'
 
 export default function Features() {
   return (
-    <section className="bg-white px-20 py-32" id="fonctionnalites">
+    <section className="bg-white px-4 md:px-12 lg:px-20 py-16 md:py-32" id="fonctionnalites">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-center font-light text-[48px] text-[#080d1e] mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+        <h2 className="text-center font-light text-[32px] md:text-[48px] text-[#080d1e] mb-4 md:mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
           Notre Promesse
         </h2>
-        <p className="text-center text-[18px] text-[#6b7280] font-light leading-[1.7] mb-16" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+        <p className="text-center text-[15px] md:text-[18px] text-[#6b7280] font-light leading-[1.7] mb-10 md:mb-16" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
           Application digitale conçue par un <strong style={{ fontWeight: 700 }}>professionnel du funéraire</strong> avec des <strong style={{ fontWeight: 700 }}>professionnels du funéraire</strong>, pour des <strong style={{ fontWeight: 700 }}>professionnels du funéraire</strong>.
         </p>
 
         {/* 3 cartes */}
-        <div className="flex gap-0 items-stretch mb-16">
+        <div className="flex flex-col md:flex-row gap-0 items-stretch mb-10 md:mb-16">
           {/* Carte 1 */}
-          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
-            <div className="mb-8">
+          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-6 py-8 md:px-12 md:py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+            <div className="mb-6 md:mb-8">
               <Image src="/assets/icons/icon-collect.png" alt="Collecte" width={27} height={27} />
             </div>
             <h3
-              className="font-bold text-[24px] text-[#080d1e] mb-4"
+              className="font-bold text-[22px] md:text-[24px] text-[#080d1e] mb-4"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
-              Avant la cérémonie :<br />Collecter les informations
+              Avant la cérémonie : Collecter les informations
             </h3>
             <ul className="space-y-0">
               {[
@@ -40,18 +40,18 @@ export default function Features() {
           </div>
 
           {/* Carte 2 */}
-          <div className="card-lift w-[394px] backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
-            <div className="mb-8">
+          <div className="card-lift w-full md:w-[394px] backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-6 py-8 md:px-12 md:py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+            <div className="mb-6 md:mb-8">
               <Image src="/assets/icons/icon-prep.png" alt="Préparation" width={27} height={27} />
             </div>
             <h3
-              className="font-bold text-[24px] text-[#080d1e] mb-2"
+              className="font-bold text-[22px] md:text-[24px] text-[#080d1e] mb-2"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
               Préparation
             </h3>
             <p className="text-[#6b7280] text-[14px] font-light leading-[1.625] mb-3">
-              L&apos;application génère automatiquement en<br />fonction des informations collectées :
+              L&apos;application génère automatiquement en fonction des informations collectées :
             </p>
             <ul className="space-y-0">
               {[
@@ -70,12 +70,12 @@ export default function Features() {
           </div>
 
           {/* Carte 3 */}
-          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
-            <div className="mb-8">
+          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-6 py-8 md:px-12 md:py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+            <div className="mb-6 md:mb-8">
               <Image src="/assets/icons/icon-supports.png" alt="Supports" width={27} height={27} />
             </div>
             <h3
-              className="font-bold text-[24px] text-[#080d1e] mb-2"
+              className="font-bold text-[22px] md:text-[24px] text-[#080d1e] mb-2"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
               Supports personnalisés
