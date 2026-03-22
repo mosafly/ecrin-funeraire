@@ -27,7 +27,7 @@ export default function Reviews() {
             className="font-light text-[60px] text-[#080d1e] text-center leading-[1]"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
-            Retour d&apos;Expérience
+            Retour d&apos;Expérience par des professionnels du funéraire
           </h2>
           <div className="w-16 h-0.5 bg-[#d4af37]" />
         </div>

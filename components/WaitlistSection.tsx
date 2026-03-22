@@ -19,7 +19,7 @@ export default function WaitlistSection() {
           className="font-light text-[60px] text-white text-center leading-tight"
           style={{ fontFamily: 'Cormorant Garamond, serif' }}
         >
-          Participez à la création de<br />l&apos;application.
+          Participez à la création de<br />l&apos;application et venez la tester.
         </h2>
 
         {/* Form card */}
@@ -29,7 +29,7 @@ export default function WaitlistSection() {
               className="text-[30px] text-[#080d1e] text-center mb-8"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Participer
+              Participer et tester
             </h3>
 
             {/* Avantages */}
@@ -45,7 +45,7 @@ export default function WaitlistSection() {
                   "Construction des fonctionnalités de l'application.",
                   'Proposition tarifaire.',
                   'Accès aux visioconférences privées.',
-                  'Bêta testeur.',
+                  'Bêta-testeur.',
                 ].map((item) => (
                   <li key={item} className="text-[15px] font-light leading-[1.9]">
                     <span className="text-[#d4af37]">— </span>
@@ -77,8 +77,8 @@ export default function WaitlistSection() {
               <p className="text-[#9ca3af] text-[13px]">
                 Pour toutes informations complémentaires, contactez Jean-Michel REY
               </p>
-              <a href="mailto:jmrey@formafuneraire.com" className="text-[#d4af37] text-[13px]">
-                jmrey@formafuneraire.com
+              <a href="mailto:jmr@formafune.fr" className="text-[#d4af37] text-[13px]">
+                jmr@formafune.fr
               </a>
             </div>
           </div>

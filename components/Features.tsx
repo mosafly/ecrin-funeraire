@@ -4,9 +4,12 @@ export default function Features() {
   return (
     <section className="bg-white px-20 py-32" id="fonctionnalites">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-center font-light text-[48px] text-[#080d1e] mb-16" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-          Fonctionnalités
+        <h2 className="text-center font-light text-[48px] text-[#080d1e] mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          Notre Promesse
         </h2>
+        <p className="text-center text-[18px] text-[#6b7280] font-light leading-[1.7] mb-16" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          Application digitale conçue par un <strong style={{ fontWeight: 700 }}>professionnel du funéraire</strong> avec des <strong style={{ fontWeight: 700 }}>professionnels du funéraire</strong>, pour des <strong style={{ fontWeight: 700 }}>professionnels du funéraire</strong>.
+        </p>
 
         {/* 3 cartes */}
         <div className="flex gap-0 items-stretch mb-16">
@@ -55,7 +58,7 @@ export default function Features() {
                 'Une trame de cérémonie.',
                 'Des idées de poèmes, musiques, textes, citations.',
                 'Des diaporamas en fonction des photos et de la musique choisie par la famille.',
-                'Vous avez toujours la maîtrise de votre cérémonies funéraires.',
+                'Vous avez toujours la maîtrise de votre cérémonie funéraire.',
               ].map((item) => (
                 <li key={item} className="text-[14px] font-light leading-[1.9]">
                   <span className="text-[#d4af37]">— </span>
@@ -74,7 +77,7 @@ export default function Features() {
               className="font-bold text-[24px] text-[#080d1e] mb-2"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
-              Supports
+              Supports personnalisés
             </h3>
             <p className="text-[#6b7280] text-[14px] font-light leading-[1.625] mb-3">
               Vous créez en 1 clic :
