@@ -37,7 +37,7 @@ export default function Reviews() {
           {reviews.map((review) => (
             <div
               key={review.author}
-              className="backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] p-12 shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]"
+              className="card-lift backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] p-12 shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]"
             >
               <p
                 className="font-semibold text-[14px] text-[#080d1e] mb-2"
@@ -59,7 +59,7 @@ export default function Reviews() {
         <div className="border-t border-b border-[rgba(212,175,55,0.2)] py-5 flex items-center justify-center">
           <a
             href="#participer"
-            className="text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase"
+            className="link-arrow text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase transition-colors duration-200 hover:text-[#d4af37]"
           >
             Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
           </a>

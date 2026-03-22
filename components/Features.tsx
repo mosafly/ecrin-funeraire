@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ScrollReveal from './ScrollReveal'
 
 export default function Features() {
   return (
@@ -14,7 +15,7 @@ export default function Features() {
         {/* 3 cartes */}
         <div className="flex gap-0 items-stretch mb-16">
           {/* Carte 1 */}
-          <div className="flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
             <div className="mb-8">
               <Image src="/assets/icons/icon-collect.png" alt="Collecte" width={27} height={27} />
             </div>
@@ -39,7 +40,7 @@ export default function Features() {
           </div>
 
           {/* Carte 2 */}
-          <div className="w-[394px] backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+          <div className="card-lift w-[394px] backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
             <div className="mb-8">
               <Image src="/assets/icons/icon-prep.png" alt="Préparation" width={27} height={27} />
             </div>
@@ -69,7 +70,7 @@ export default function Features() {
           </div>
 
           {/* Carte 3 */}
-          <div className="flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
+          <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-12 py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
             <div className="mb-8">
               <Image src="/assets/icons/icon-supports.png" alt="Supports" width={27} height={27} />
             </div>
@@ -102,7 +103,7 @@ export default function Features() {
         <div className="border-t border-b border-[rgba(212,175,55,0.2)] py-5 flex items-center justify-center">
           <a
             href="#participer"
-            className="text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase"
+            className="link-arrow text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase transition-colors duration-200 hover:text-[#d4af37]"
           >
             Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
           </a>

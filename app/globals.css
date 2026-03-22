@@ -438,6 +438,70 @@ a { text-decoration: none; }
   font-size: 15px; line-height: 1.7; color: var(--gray);
 }
 
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero — stagger au chargement */
+.hero-anim-1 { animation: fadeUp 0.85s cubic-bezier(0.16,1,0.3,1) 0.10s both; }
+.hero-anim-2 { animation: fadeUp 0.85s cubic-bezier(0.16,1,0.3,1) 0.30s both; }
+.hero-anim-3 { animation: fadeUp 0.85s cubic-bezier(0.16,1,0.3,1) 0.50s both; }
+.header-anim  { animation: fadeDown 0.6s cubic-bezier(0.16,1,0.3,1) 0s both; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.10s; }
+.reveal-d2 { transition-delay: 0.22s; }
+.reveal-d3 { transition-delay: 0.34s; }
+
+/* CTA — lift au hover */
+.cta-lift {
+  transition: transform 0.22s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.22s ease,
+              background 0.22s ease,
+              color 0.22s ease,
+              border-color 0.22s ease !important;
+}
+.cta-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(212,175,55,0.22) !important;
+}
+.cta-lift:active { transform: translateY(0) !important; }
+
+/* Card — elevation au hover */
+.card-lift {
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -12px rgba(8,13,30,0.16) !important;
+  border-color: rgba(212,175,55,0.45) !important;
+}
+
+/* Lien bandeau — flèche animée */
+.link-arrow { position: relative; transition: color 0.2s; }
+.link-arrow::after {
+  content: ' →';
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s, transform 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+.link-arrow:hover::after { opacity: 1; transform: translateX(2px); }
+
 /* ══ RESPONSIVE ══ */
 @media (max-width: 1024px) {
   .header-inner { padding: 0 32px; }
