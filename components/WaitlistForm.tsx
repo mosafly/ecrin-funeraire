@@ -36,7 +36,7 @@ export default function WaitlistForm() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        className="w-full border border-[#e5e7eb] px-4 py-3 text-[16px] text-[#080d1e] placeholder:text-[#9ca3af] mb-4 outline-none focus:border-[#d4af37] transition-colors"
+        className="w-full border border-[#e5e7eb] px-4 py-4 md:py-3 text-[16px] text-[#080d1e] placeholder:text-[#9ca3af] mb-4 outline-none focus:border-[#d4af37] transition-colors"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}

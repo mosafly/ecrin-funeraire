@@ -549,3 +549,19 @@ a { text-decoration: none; }
   .nav-links { gap: 12px; }
   .nav-links a { font-size: 10px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-d1, .reveal-d2, .reveal-d3 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-anim-1, .hero-anim-2, .hero-anim-3, .header-anim {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .cta-lift, .card-lift {
+    transition: none;
+  }
+}

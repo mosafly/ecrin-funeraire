@@ -38,7 +38,7 @@ export default function Footer() {
             <a
               key={link.label}
               href={link.href}
-              className="text-[#9ca3af] text-[10px] font-semibold tracking-[3px] uppercase"
+              className="text-[#9ca3af] text-[11px] font-semibold tracking-[2px] md:tracking-[3px] uppercase"
             >
               {link.label}
             </a>

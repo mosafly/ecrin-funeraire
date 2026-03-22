@@ -35,7 +35,7 @@ export default function WaitlistSection() {
             {/* Avantages */}
             <div className="border border-[#e5e7eb] p-5 md:p-8 mb-6 md:mb-8">
               <p
-                className="text-[22px] text-[#080d1e] mb-4"
+                className="text-[16px] md:text-[22px] text-[#080d1e] mb-4"
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
                 Avantages :

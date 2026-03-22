@@ -13,7 +13,7 @@ export default function Features() {
         </p>
 
         {/* 3 cartes */}
-        <div className="flex flex-col md:flex-row gap-0 items-stretch mb-10 md:mb-16">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-stretch mb-10 md:mb-16">
           {/* Carte 1 */}
           <div className="card-lift flex-1 backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] px-6 py-8 md:px-12 md:py-14 relative shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]">
             <div className="mb-6 md:mb-8">

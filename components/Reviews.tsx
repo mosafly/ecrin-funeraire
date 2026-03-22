@@ -33,7 +33,7 @@ export default function Reviews() {
         </div>
 
         {/* Grid 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-10 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 mb-10 md:mb-16">
           {reviews.map((review) => (
             <div
               key={review.author}
