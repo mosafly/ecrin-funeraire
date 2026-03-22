@@ -43,9 +43,9 @@ export default function Hero() {
           }}
         >
           Application pour maîtres de cérémonie et conseillers funéraires:<br />
-          <strong>Collectez</strong> les informations des familles<br />
-          <strong>Générez</strong> vos textes, poèmes, musiques, citations, diaporamas<br />
-          <strong>Créez</strong> vos supports personnalisés
+          <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>Collectez</strong> les informations des familles<br />
+          <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>Générez</strong> vos textes, poèmes, musiques, citations, diaporamas<br />
+          <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>Créez</strong> vos supports personnalisés
         </p>
         <a
           href="#participer"

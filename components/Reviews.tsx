@@ -46,8 +46,8 @@ export default function Reviews() {
                 {review.author}
               </p>
               <p
-                className="italic text-[16px] text-[#6b7280] leading-[1.8]"
-                style={{ fontFamily: 'Georgia, serif' }}
+                className="text-[16px] text-[#6b7280] leading-[1.8]"
+                style={{ fontFamily: 'Georgia, serif', fontWeight: 700, fontStyle: 'italic' }}
               >
                 {review.text}
               </p>

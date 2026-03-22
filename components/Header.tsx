@@ -20,23 +20,6 @@ export default function Header() {
             L&apos;Écrin Funéraire
           </span>
         </a>
-        <nav className="ml-auto flex items-center gap-12">
-          {[
-            { label: 'Accueil', href: '#' },
-            { label: 'Fonctionnalités', href: '#fonctionnalites' },
-            { label: "Retour d'Expérience", href: '#retour' },
-            { label: 'Participer', href: '#participer' },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[#080d1e] text-xs font-semibold tracking-[2px] uppercase"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
   )
