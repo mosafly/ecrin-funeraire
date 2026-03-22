@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { createServiceClient } from '@/lib/supabase/server'
+import { appendToWaitlistSheet } from '@/lib/google/sheets'
 
 const schema = z.object({
   email: z.string().email('Adresse email invalide'),
@@ -19,9 +20,11 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = await createServiceClient()
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('waitlist')
       .insert({ email: parsed.data.email, source: 'landing' })
+      .select('id, email, source, created_at')
+      .single()
 
     if (error) {
       if (error.code === '23505') {
@@ -31,6 +34,22 @@ export async function POST(req: NextRequest) {
         )
       }
       throw error
+    }
+
+    // Sync Google Sheets — non bloquant pour l'utilisateur
+    try {
+      await appendToWaitlistSheet(
+        data.email,
+        data.source,
+        new Date(data.created_at).toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })
+      )
+      await supabase
+        .from('waitlist')
+        .update({ sheets_synced: true })
+        .eq('id', data.id)
+    } catch (sheetsError) {
+      console.error('Google Sheets sync failed:', sheetsError)
+      // sheets_synced reste false — inscription Supabase réussie quand même
     }
 
     return NextResponse.json({ success: true }, { status: 201 })
