@@ -1,11 +1,11 @@
 const reviews = [
   {
     author: 'Marie Delaere',
-    text: `L'Écrin Funéraire c'est comme ça que je m'en suis servi pour écrire un éloge. J'avais quelques éléments, quelques consignes, et l'IA a permis de donner de la fluidité là je suis assez sèche dans mes formules. Ça m'a ouvert à de nouvelles façons d'écrire auxquelles je ne pensais pas. Comme on peut s'inspirer de livres qu'on lirait. Ce sont juste des tournures qui s'ajoutent à notre gamme. Et puis j'ai revu parce qu'elle n'avait pas tout respecté. Ce n'est pas la laisser faire à notre place. C'est l'utiliser comme on utilise un crayon ou un papier. C'est un outil.`,
+    text: `L'Écrin Funéraire c'est comme ça que je m'en suis servi pour écrire un éloge. J'avais quelques éléments, quelques consignes, et l'IA a permis de donner de la fluidité là je suis assez sèche dans mes formules. Ça m'a ouvert à de nouvelles façons d'écrire auxquelles je ne pensais pas. Comme on peut s'inspirer de livres qu'on lirait. Ce sont juste des tournures qui s'ajoutent à notre gamme. Et puis j'ai revu parce qu'elle n'avait pas tout respecté. Ce n' est pas la laisser faire à notre place. C'est l'utiliser comme on utilise un crayon ou un papier. C'est un outil.`,
   },
   {
     author: 'Ludovic FAVRAY',
-    text: `Bonjour Jean-Michel j'espère que tu va bien ?\nJuste pour t'informer que je me suis lancé sur une cérémonie civile au créma de Lorient.\nLe grand exercice face à 150 personnes durant 45 min, avec des moments d'improvisation.\nJ'ai suivi t'es conseils avec une préparation qui colle à l'image du défunt.\nUn retour famille au top.\nMerci pour t'es précieux conseils.`,
+    text: `Bonjour Jean-Michel j'espère que tu va bien ? Juste pour t'informer que je me suis lancé sur une cérémonie civile au créma de Lorient. Le grand exercice face à 150 personnes durant 45 min, avec des moments d'improvisation. J'ai suivi t'es conseils avec une préparation qui colle à l'image du défunt. Un retour famille au top. Merci pour t'es précieux conseils.`,
   },
   {
     author: 'Nicolas Matz',
@@ -19,26 +19,50 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="section-reviews" id="retours">
-      <div className="container">
-        <div className="reviews-head">
-          <h2 className="section-title">Retour d&apos;Expérience</h2>
-          <div className="gold-bar"></div>
+    <section id="retour" className="bg-[#fdfcfb] px-20 py-32">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Header */}
+        <div className="flex flex-col items-center gap-6 mb-16">
+          <h2
+            className="font-light text-[60px] text-[#080d1e] text-center leading-[1]"
+            style={{ fontFamily: 'Cormorant Garamond, serif' }}
+          >
+            Retour d&apos;Expérience
+          </h2>
+          <div className="w-16 h-0.5 bg-[#d4af37]" />
         </div>
 
-        <div className="reviews-grid">
+        {/* Grid 2x2 */}
+        <div className="grid grid-cols-2 gap-0 mb-16">
           {reviews.map((review) => (
-            <div key={review.author} className="review-card">
-              <p className="review-author">{review.author}</p>
-              <p className="review-text" style={{ whiteSpace: 'pre-line' }}>
+            <div
+              key={review.author}
+              className="backdrop-blur-sm bg-[rgba(255,255,255,0.7)] border border-[rgba(212,175,55,0.2)] p-12 shadow-[0px_10px_30px_-10px_rgba(11,21,51,0.1)]"
+            >
+              <p
+                className="font-semibold text-[14px] text-[#080d1e] mb-2"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                {review.author}
+              </p>
+              <p
+                className="italic text-[16px] text-[#6b7280] leading-[1.8]"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
                 {review.text}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="bandeau-cta">
-          <a href="#participer">Rejoignez la communauté des maîtres de cérémonie.</a>
+        {/* Bandeau CTA */}
+        <div className="border-t border-b border-[rgba(212,175,55,0.2)] py-5 flex items-center justify-center">
+          <a
+            href="#participer"
+            className="text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase"
+          >
+            Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
+          </a>
         </div>
       </div>
     </section>

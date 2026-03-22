@@ -34,62 +34,39 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div className="form-card">
-      <p className="form-card-title">Participer</p>
+    <form onSubmit={handleSubmit}>
+      <input
+        className="w-full border border-[#e5e7eb] px-4 py-3 text-[16px] text-[#080d1e] placeholder:text-[#9ca3af] mb-4 outline-none focus:border-[#d4af37] transition-colors"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="votre@email.com"
+        required
+        disabled={status === 'loading' || status === 'success'}
+      />
 
-      <div className="form-participer-block">
-        <p className="form-participer-titre">Avantages :</p>
-        <ul className="form-participer-list">
-          <li>Construction des fonctionnalités de l&apos;application.</li>
-          <li>Proposition tarifaire.</li>
-          <li>Accès aux visioconférences privées.</li>
-          <li>Bêta testeur.</li>
-        </ul>
-      </div>
+      {status === 'success' && (
+        <p style={{ color: '#16a34a', marginBottom: '16px', textAlign: 'center', fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+          {message}
+        </p>
+      )}
+      {status === 'error' && (
+        <p style={{ color: '#dc2626', marginBottom: '16px', textAlign: 'center', fontFamily: 'Inter, sans-serif', fontSize: '14px' }}>
+          {message}
+        </p>
+      )}
 
-      <form onSubmit={handleSubmit}>
-        <label className="form-input-label">Mon adresse mail :</label>
-        <input
-          className="form-input"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="votre@email.com"
-          required
-          disabled={status === 'loading' || status === 'success'}
-        />
-
-        {status === 'success' && (
-          <p style={{ color: '#16a34a', marginBottom: '16px', textAlign: 'center', fontFamily: 'Georgia, serif', fontSize: '16px' }}>
-            {message}
-          </p>
-        )}
-        {status === 'error' && (
-          <p style={{ color: '#dc2626', marginBottom: '16px', textAlign: 'center', fontFamily: 'Inter, sans-serif', fontSize: '14px' }}>
-            {message}
-          </p>
-        )}
-
-        {status !== 'success' && (
-          <button
-            type="submit"
-            className="form-btn"
-            disabled={status === 'loading'}
-          >
-            {status === 'loading' ? 'Inscription...' : 'Participer à la création de l\'application'}
-          </button>
-        )}
-      </form>
-
-      <div className="rgpd-block">
-        <strong>Confidentialité (RGPD)</strong><br />
-        Vos données : utilisées uniquement pour l&apos;Écrin Funéraire. Modifiables ou supprimables à tout moment.
-      </div>
-
-      <p className="form-contact-info">
-        Pour toutes informations complémentaires, contactez Jean-Michel REY<br />
-        <a href="mailto:jmrey@formafuneraire.fr">jmrey@formafuneraire.fr</a>
-      </p>
-    </div>
+      {status !== 'success' && (
+        <button
+          type="submit"
+          className="w-full bg-[#080d1e] text-white text-xs font-semibold tracking-[2px] uppercase py-5 px-8 hover:bg-[#d4af37] transition-colors disabled:opacity-60"
+          disabled={status === 'loading'}
+        >
+          {status === 'loading'
+            ? 'Inscription...'
+            : "Rejoindre la création de l'application ou Rejoindre les bêta-testeurs"}
+        </button>
+      )}
+    </form>
   )
 }
