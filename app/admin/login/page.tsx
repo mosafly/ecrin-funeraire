@@ -1,33 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { useActionState } from 'react'
+import { loginAction } from '@/app/admin/actions'
+
+const initialState = { error: '' }
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle')
-  const [message, setMessage] = useState('')
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setStatus('loading')
-
-    const supabase = createClient()
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        emailRedirectTo: `${window.location.origin}/admin`,
-      },
-    })
-
-    if (error) {
-      setStatus('error')
-      setMessage(error.message)
-    } else {
-      setStatus('sent')
-      setMessage(`Un lien de connexion a été envoyé à ${email}`)
-    }
-  }
+  const [state, formAction, isPending] = useActionState(loginAction, initialState)
 
   return (
     <div style={{
@@ -52,53 +31,68 @@ export default function AdminLoginPage() {
           L&apos;Écrin Funéraire
         </p>
 
-        {status === 'sent' ? (
-          <p style={{
-            fontFamily: 'Georgia, serif', fontSize: '18px',
-            color: '#16a34a', textAlign: 'center', lineHeight: '1.6',
+        <form action={formAction}>
+          <label style={{
+            fontFamily: 'Georgia, serif', fontSize: '16px',
+            color: '#080d1e', display: 'block', marginBottom: '8px',
           }}>
-            {message}
-          </p>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <label style={{
-              fontFamily: 'Georgia, serif', fontSize: '16px',
-              color: '#080d1e', display: 'block', marginBottom: '8px',
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="votre@email.com"
+            style={{
+              width: '100%', border: '1px solid #e5e7eb',
+              padding: '16px', fontFamily: 'Georgia, serif',
+              fontSize: '16px', marginBottom: '24px',
+              outline: 'none', background: 'transparent', boxSizing: 'border-box',
+            }}
+          />
+          <label style={{
+            fontFamily: 'Georgia, serif', fontSize: '16px',
+            color: '#080d1e', display: 'block', marginBottom: '8px',
+          }}>
+            Mot de passe
+          </label>
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="••••••••"
+            style={{
+              width: '100%', border: '1px solid #e5e7eb',
+              padding: '16px', fontFamily: 'Georgia, serif',
+              fontSize: '16px', marginBottom: '24px',
+              outline: 'none', background: 'transparent', boxSizing: 'border-box',
+            }}
+          />
+
+          {state?.error && (
+            <p style={{
+              color: '#dc2626', fontSize: '14px',
+              fontFamily: 'Inter, sans-serif', marginBottom: '16px',
             }}>
-              Email
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="votre@email.com"
-              style={{
-                width: '100%', border: '1px solid #e5e7eb',
-                padding: '16px', fontFamily: 'Georgia, serif',
-                fontSize: '18px', marginBottom: '24px',
-                outline: 'none', background: 'transparent',
-              }}
-            />
-            {status === 'error' && (
-              <p style={{ color: '#dc2626', fontSize: '14px', marginBottom: '16px' }}>
-                {message}
-              </p>
-            )}
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              style={{
-                width: '100%', background: '#080d1e', color: '#fff',
-                padding: '20px', border: 'none', cursor: 'pointer',
-                fontFamily: 'Inter, sans-serif', fontWeight: 600,
-                fontSize: '12px', letterSpacing: '2.4px', textTransform: 'uppercase',
-              }}
-            >
-              {status === 'loading' ? 'Envoi...' : 'Recevoir le lien de connexion'}
-            </button>
-          </form>
-        )}
+              {state.error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={isPending}
+            style={{
+              width: '100%', background: '#080d1e', color: '#fff',
+              padding: '20px', border: 'none',
+              cursor: isPending ? 'not-allowed' : 'pointer',
+              fontFamily: 'Inter, sans-serif', fontWeight: 600,
+              fontSize: '12px', letterSpacing: '2.4px', textTransform: 'uppercase',
+              opacity: isPending ? 0.7 : 1,
+            }}
+          >
+            {isPending ? 'Connexion...' : 'Se connecter'}
+          </button>
+        </form>
       </div>
     </div>
   )

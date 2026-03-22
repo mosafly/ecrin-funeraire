@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { logoutAction } from '@/app/admin/actions'
 
 export default async function AdminLayout({
   children,
@@ -25,12 +26,24 @@ export default async function AdminLayout({
         }}>
           Admin — L&apos;Écrin Funéraire
         </span>
-        <a href="/" style={{
-          fontFamily: 'Inter, sans-serif', fontSize: '12px',
-          letterSpacing: '1.4px', textTransform: 'uppercase', color: '#9ca3af',
-        }}>
-          Voir le site →
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <a href="/" style={{
+            fontFamily: 'Inter, sans-serif', fontSize: '12px',
+            letterSpacing: '1.4px', textTransform: 'uppercase', color: '#9ca3af',
+            textDecoration: 'none',
+          }}>
+            Voir le site →
+          </a>
+          <form action={logoutAction}>
+            <button type="submit" style={{
+              fontFamily: 'Inter, sans-serif', fontSize: '12px',
+              letterSpacing: '1.4px', textTransform: 'uppercase', color: '#9ca3af',
+              background: 'none', border: 'none', cursor: 'pointer',
+            }}>
+              Déconnexion
+            </button>
+          </form>
+        </div>
       </div>
       <div style={{ padding: '48px' }}>
         {children}
