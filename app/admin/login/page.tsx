@@ -1,12 +1,32 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useFormState, useFormStatus } from 'react-dom'
 import { loginAction } from '@/app/admin/actions'
 
 const initialState = { error: '' }
 
+function SubmitButton() {
+  const { pending } = useFormStatus()
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      style={{
+        width: '100%', background: '#080d1e', color: '#fff',
+        padding: '20px', border: 'none',
+        cursor: pending ? 'not-allowed' : 'pointer',
+        fontFamily: 'Inter, sans-serif', fontWeight: 600,
+        fontSize: '12px', letterSpacing: '2.4px', textTransform: 'uppercase',
+        opacity: pending ? 0.7 : 1,
+      }}
+    >
+      {pending ? 'Connexion...' : 'Se connecter'}
+    </button>
+  )
+}
+
 export default function AdminLoginPage() {
-  const [state, formAction, isPending] = useActionState(loginAction, initialState)
+  const [state, formAction] = useFormState(loginAction, initialState)
 
   return (
     <div style={{
@@ -78,20 +98,7 @@ export default function AdminLoginPage() {
             </p>
           )}
 
-          <button
-            type="submit"
-            disabled={isPending}
-            style={{
-              width: '100%', background: '#080d1e', color: '#fff',
-              padding: '20px', border: 'none',
-              cursor: isPending ? 'not-allowed' : 'pointer',
-              fontFamily: 'Inter, sans-serif', fontWeight: 600,
-              fontSize: '12px', letterSpacing: '2.4px', textTransform: 'uppercase',
-              opacity: isPending ? 0.7 : 1,
-            }}
-          >
-            {isPending ? 'Connexion...' : 'Se connecter'}
-          </button>
+          <SubmitButton />
         </form>
       </div>
     </div>
