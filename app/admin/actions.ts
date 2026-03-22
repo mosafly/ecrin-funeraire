@@ -2,7 +2,7 @@
 
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceClient } from '@/lib/supabase/server'
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL!
 
@@ -27,7 +27,7 @@ export async function loginAction(_prevState: { error: string }, formData: FormD
 export async function deleteEntriesAction(ids: string[]) {
   if (!ids.length) return { error: 'Aucun ID fourni.' }
 
-  const supabase = await createClient()
+  const supabase = await createServiceClient()
   const { error } = await supabase
     .from('waitlist')
     .delete()
