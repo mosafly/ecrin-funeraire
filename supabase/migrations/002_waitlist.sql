@@ -25,3 +25,8 @@ CREATE POLICY "Authenticated can update waitlist"
   TO authenticated
   USING (true)
   WITH CHECK (true);
+
+CREATE POLICY "Authenticated can delete waitlist"
+  ON waitlist FOR DELETE
+  TO authenticated
+  USING (true);
