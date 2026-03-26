@@ -77,8 +77,8 @@ export default function WaitlistSection() {
               <p className="text-[#9ca3af] text-[13px]">
                 Pour toutes informations complémentaires, contactez Jean-Michel REY
               </p>
-              <a href="mailto:jmr@formafune.fr" className="text-[#d4af37] text-[13px]">
-                jmr@formafune.fr
+              <a href="mailto:lecrinfuneraire@gmail.com" className="text-[#d4af37] text-[13px]">
+                lecrinfuneraire@gmail.com
               </a>
             </div>
           </div>
