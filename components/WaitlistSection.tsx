@@ -25,13 +25,6 @@ export default function WaitlistSection() {
         {/* Form card */}
         <div className="w-full bg-[#fcfaf7] border-t-8 border-[#d4af37] rounded-sm shadow-lg">
           <div className="px-6 pt-10 pb-8 md:px-20 md:pt-16 md:pb-12">
-            <h3
-              className="text-[24px] md:text-[30px] text-[#080d1e] text-center mb-6 md:mb-8"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Participer et tester
-            </h3>
-
             {/* Avantages */}
             <div className="border border-[#e5e7eb] p-5 md:p-8 mb-6 md:mb-8">
               <p
