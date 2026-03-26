@@ -19,7 +19,7 @@ export default function WaitlistSection() {
           className="font-light text-[34px] md:text-[50px] lg:text-[60px] text-white text-center leading-tight"
           style={{ fontFamily: 'Cormorant Garamond, serif' }}
         >
-          Participez à la création de l&apos;application et venez la tester.
+          Participez à la création de l&apos;application.
         </h2>
 
         {/* Form card */}

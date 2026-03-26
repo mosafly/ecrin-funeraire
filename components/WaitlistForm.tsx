@@ -64,7 +64,7 @@ export default function WaitlistForm() {
         >
           {status === 'loading'
             ? 'Inscription...'
-            : "Rejoindre la création de l'application ou Rejoindre les bêta-testeurs"}
+            : "Participer à la création de l'application"}
         </button>
       )}
     </form>

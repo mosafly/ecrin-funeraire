@@ -31,7 +31,7 @@ export default function Hero() {
               '0px 0px 60px rgba(8,13,30,0.55), 0px 2px 20px rgba(8,13,30,0.8)',
           }}
         >
-          Créer une cérémonie funéraire personnalisée en quelques minutes
+          Créer une cérémonie funéraire personnalisée de qualité, en quelques minutes
         </h1>
         <p
           className="hero-anim-2 text-[15px] md:text-[18px] leading-[1.7] text-[rgba(255,255,255,0.9)] italic mb-8 md:mb-10"
@@ -50,7 +50,7 @@ export default function Hero() {
           href="#participer"
           className="hero-anim-3 cta-lift block text-center bg-white border border-[rgba(212,175,55,0.2)] px-6 py-4 md:px-12 md:py-5 text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase leading-relaxed"
         >
-          Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
+          Participer à la création de l&apos;application
         </a>
       </div>
     </section>
