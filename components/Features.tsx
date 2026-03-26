@@ -105,7 +105,7 @@ export default function Features() {
             href="#participer"
             className="link-arrow text-[#080d1e] text-xs font-semibold tracking-[2.4px] uppercase transition-colors duration-200 hover:text-[#d4af37]"
           >
-            Participer à la création de l&apos;application ou Rejoindre les bêta-testeurs
+            Participer à la création de l&apos;application
           </a>
         </div>
       </div>
