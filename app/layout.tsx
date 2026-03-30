@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Application pour maîtres de cérémonie : collectez les informations des familles, générez vos textes, créez vos supports.",
   openGraph: {
     title: "L'Écrin Funéraire",
-    description: "Application pour maîtres de cérémonie funèbre",
+    description: "Application pour maîtres de cérémonie funéraire",
     locale: 'fr_FR',
     type: 'website',
   },
